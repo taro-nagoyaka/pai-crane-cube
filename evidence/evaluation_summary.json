@@ -1,0 +1,23 @@
+{
+  "task_status_date": "2026-10-26",
+  "task": "Gazebo CRANE+ grasps a wood cube and lifts it near upright arm height, then holds it",
+  "training_dataset": {"episodes":25,"frames":6246},
+  "validation_dataset": {"episodes":6,"frames":1517},
+  "total_successful_teacher_episodes":31,
+  "additional_varied_teacher_episodes":24,
+  "metric": "teacher-forced absolute action MAE in radians",
+  "source_of_summary": "Operator-pasted diagnose_model.py console summaries in this conversation",
+  "runs": [
+    {"name":"act_varied_novae_6000","steps":6000,"train_mae":0.039360,"validation_mae":0.038795,"moving_train_mae":0.038871,"moving_validation_mae":0.038084},
+    {"name":"act_varied_novae_18000","steps":18000,"train_mae":0.035583,"validation_mae":0.035295,"moving_train_mae":0.034168,"moving_validation_mae":0.033713}
+  ],
+  "hold_current_angle_baseline": {"train_mae":0.057048,"validation_mae":0.056664,"moving_train_mae":0.065652,"moving_validation_mae":0.065362},
+  "moving_definition": "Same episode; maximum adjacent observed joint-angle change > 0.005 rad",
+  "latest_observed_result": "Operator reports learned policy again stops around grasp; full learned lift not achieved",
+  "latest_closed_loop_trace_received": false,
+  "included_evidence": {"validation_trace_varied18000.csv":"Uploaded validation_trace(2).csv, 1517 frames, 6 episodes", "deploy_varied6000.csv":"Uploaded deploy_varied6000_.csv, 301 allowed predictions ending around 30 simulated seconds"},
+  "teacher_vs_policy": "Automatic successful teacher recordings are not learned-policy successes",
+  "formal_closed_loop_success_rate": null,
+  "model_weights_in_base_zip": false,
+  "note": "This is a submission summary assembled from provided results, not an original training run log or saved checkpoint config."
+}
